@@ -482,10 +482,10 @@ function showMessage(message) {
   const textElement = document.getElementById('animateText');
   textElement.textContent = message;
   textElement.style.animation = 'textAnimation 1.5s ease-in-out, cuteAnimation 1.5s ease-in-out';
-  textElement.style.display = 'block'; // Ensure the text is visible
+  textElement.style.display = 'block'; 
   setTimeout(() => {
-    textElement.style.display = 'none'; // Hide the text after 3 seconds
-    textElement.style.animation = 'none'; // Reset the animation
+    textElement.style.display = 'none'; 
+    textElement.style.animation = 'none'; 
   }, 3000);
 }
 
@@ -497,11 +497,11 @@ function createSunflower(message, index) {
   sunflower.setAttribute('data-message', message);
   sunflower.classList.remove('hidden');
   
-  const x = (index / 4) * 80; // Adjusted to spread 5 sunflowers across the width
+  const x = (index / 4) * 80;
   sunflower.style.left = `${x}%`;
   
   // Randomize the height slightly
-  const yOffset = Math.random() * 10 - 5; // Random value between -5% and 5%
+  const yOffset = Math.random() * 10 - 5; 
   sunflower.style.bottom = `${yOffset}%`;
   
   sunflower.addEventListener('click', () => {
@@ -514,10 +514,9 @@ function createSunflower(message, index) {
 
 function animateSunflowers() {
   const garden = document.getElementById('garden');
-  garden.innerHTML = ''; // Clear existing sunflowers
+  garden.innerHTML = ''; 
   
-  const numSunflowers = 5; // Reduced to 5 sunflowers for better spacing
-  
+  const numSunflowers = 5; 
   for (let i = 0; i < numSunflowers; i++) {
     const sunflower = createSunflower(messages[i % messages.length], i);
     
